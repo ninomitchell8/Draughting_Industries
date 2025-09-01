@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Contact
+{% endblock %}
+
+{% block content %}
+
+
+    <h2>Contact Us</h2>
+  <div class ="page">
+    <p>Have a project or question? Get in touch:</p>
+    <form action="#" method="POST" class = "contact-form">
+      <label for="name" class = "contact-form">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email" class = "contact-form">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message" class = "contact-form">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit" class="btn btn-outline-primary" onclick="window.location.href='/contact'">Send</button>
+    </form>
+    <div class ="contact-footer">
+
+      <h2>OR</h2>
+    <a href="https://wa.me/27744482182" target="_blank">
+    
+      <i class="fa fa-brands fa-whatsapp" style="font-size:60px;"></i>
+      <h3>WhatsApp Message</h3>
+    </a>
+
+    </div>
+
+  </div>
+ 
+{% endblock %}
