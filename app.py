@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, flash
 from flask_mail import Mail, Message
 import secrets
+from flask import send_from_directory
 print(secrets.token_hex(16))
 app = Flask(__name__)
 
@@ -46,6 +47,10 @@ def contact():
         flash('Message sent successfully!')
         return redirect('/contact')
     return render_template('contact.html')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(app.static_folder, 'sitemap.xml')
 
 if __name__ == '__main__':
     app.run(debug=True)
